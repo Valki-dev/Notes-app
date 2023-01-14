@@ -13,3 +13,11 @@ input {
     margin-bottom: 100px;
     margin-top: 70px;
 }
+
+.strike {
+    text-decoration: line-through;
+}
+
+.none {
+    text-decoration: none;
+}

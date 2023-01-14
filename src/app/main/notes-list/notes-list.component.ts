@@ -16,12 +16,13 @@ export class NotesListComponent {
   tittle: string = "";
   description: string = "";
   selectedNote!: Note;
+  striked: boolean = false;
 
-  deleteNote(note: Note): void {    
+  deleteNote(note: Note): void {
     this.service.deleteNote(note);
   }
 
-  activateModal(note: Note) {
+  enableModal(note: Note) {
     this.selectedNote = note;
     console.log(this.selectedNote);
     this.modalActivated = true;
@@ -30,17 +31,29 @@ export class NotesListComponent {
     this.description = this.selectedNote.description;
   }
 
-  deactivateModal() {
+  disableModal() {
     this.modalActivated = false;
   }
 
   updateNote() {
-    if((this.tittle.trim() != "") && (this.description.trim() != "")) {      
+    if ((this.tittle.trim() != "") && (this.description.trim() != "")) {
       this.modalActivated = false;
       this.service.updateNote(this.selectedNote, this.tittle, this.description);
     }
     this.tittle = "";
     this.description = "";
   }
+
+  strikeNote(note: Note) {
+    if (!this.striked) {
+      this.striked = true;
+      note.completed = true;
+
+    } else {
+      this.striked = false;
+      note.completed = false;
+    }
+  }
+
 
 }

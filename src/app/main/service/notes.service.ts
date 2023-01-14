@@ -20,7 +20,7 @@ export class NotesService {
   }
 
   deleteNote(note: Note): void {
-    let index = this.notes.findIndex(noteInArray => noteInArray.id == note.id);
+    let index = this.findIndex(note);
     
     if(index != -1) {      
       this.notes.splice(index, 1);
@@ -28,11 +28,15 @@ export class NotesService {
   }
 
   updateNote(note: Note, tittle: string, description: string) {
-    let index = this.notes.findIndex(noteInArray => noteInArray.id == note.id);
+    let index = this.findIndex(note);
     if(index != -1) {
       this.notes[index].tittle = tittle;
       this.notes[index].description = description;
     }
+  }
+
+  findIndex(note: Note) {
+    return this.notes.findIndex( noteInArray => noteInArray.id === note.id);
   }
 
 }
