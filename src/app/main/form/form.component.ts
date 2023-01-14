@@ -13,12 +13,14 @@ export class FormComponent {
 
   tittle: string = "";
   description: string = "";
+  ids: number[] = [];
 
 
   createNote() {
-
     if((this.tittle.trim() != "") && (this.description.trim() != "")) {
+      let id = this.generateId();
       let newNote: Note = {
+        id: id,
         tittle: this.tittle,
         description: this.description
       }
@@ -27,8 +29,21 @@ export class FormComponent {
       console.log(this.service.getNotes);
     }
 
-    this.tittle = "";
-    this.description = "";
+    // this.tittle = "";
+    // this.description = "";
+  }
+
+  generateId() {
+    let repeated = true;
+    let id = -1
+    do {
+      id = Math.floor(Math.random() * 1000000);
+      if(!this.ids.some(idInArray => idInArray == id)) {
+        this.ids.push(id)
+        repeated = false;
+      }
+    } while(repeated);
+    return id;
   }
 
 }

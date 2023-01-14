@@ -13,8 +13,8 @@ export class NotesListComponent {
 
   notes: Note[] = this.service.getNotes;
 
-  deleteNote() {
-    // this.service.getNotes.
+  deleteNote(note: Note): void {    
+    this.service.deleteNote(note);
   }
 
 }

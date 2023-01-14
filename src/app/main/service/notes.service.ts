@@ -15,8 +15,16 @@ export class NotesService {
     return this.notes;
   }
 
-  createNote(newNote: Note) {
+  createNote(newNote: Note): void {
     this.notes.push(newNote);
+  }
+
+  deleteNote(note: Note): void {
+    let idFound = this.notes.findIndex(noteInArray => noteInArray.id == note.id);
+    
+    if(idFound != -1) {      
+      this.notes.splice(idFound, 1);
+    }
   }
 
 }
