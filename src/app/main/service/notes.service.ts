@@ -10,4 +10,9 @@ export class NotesService {
   constructor(private httpClient: HttpClient) { }
 
   notes: Note[] = [];
+
+  get getNotes() {
+    return this.notes;
+  }
+
 }

@@ -1,0 +1,11 @@
+.card {
+    background-color: rgb(3, 141, 87);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#notesList {
+    border-radius: 10px;
+    margin-bottom: 100px;
+    margin-top: 70px;
+}

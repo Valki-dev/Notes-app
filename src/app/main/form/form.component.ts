@@ -1,21 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NotesService } from '../service/notes.service';
+import { Note } from '../interfaces/note.interface';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
 
-  constructor() { }
+  constructor(private service: NotesService) { }
 
   tittle: string = "";
   description: string = "";
 
-  ngOnInit(): void {
-  }
 
   createNote() {
+
+    if((this.tittle.trim() != "") && (this.description.trim() != "")) {
+      let newNote: Note = {
+        tittle: this.tittle,
+        description: this.description
+      }
+  
+      this.service.getNotes.push(newNote);
+      console.log(this.service.getNotes);
+    }
     
   }
 

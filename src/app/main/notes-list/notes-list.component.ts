@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Note } from '../interfaces/note.interface';
+import { NotesService } from '../service/notes.service';
 
 @Component({
   selector: 'app-notes-list',
   templateUrl: './notes-list.component.html',
   styleUrls: ['./notes-list.component.css']
 })
-export class NotesListComponent implements OnInit {
+export class NotesListComponent {
 
-  constructor() { }
+  constructor(private service: NotesService) { }
 
-  ngOnInit(): void {
+  notes: Note[] = this.service.getNotes;
+
+  deleteNote() {
+    // this.service.getNotes.
   }
 
 }

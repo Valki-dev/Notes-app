@@ -1,4 +1,4 @@
 export interface Note {
-    title: string,
+    tittle: string,
     description: string
 }

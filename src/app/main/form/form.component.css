@@ -3,10 +3,6 @@ button {
     border: 1px solid rgb(3, 171, 109);
 }
 
-#form {
-    min-height: 64vh;
-}
-
 form {
     border: 3px solid rgb(0, 40, 54);
     border-radius: 10px;

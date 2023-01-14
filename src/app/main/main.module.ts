@@ -4,13 +4,15 @@ import { FormComponent } from './form/form.component';
 import { NotesListComponent } from './notes-list/notes-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 
 @NgModule({
   declarations: [
     FormComponent,
-    NotesListComponent
+    NotesListComponent,
+    MainPageComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ], 
   exports: [
-    FormComponent
+    MainPageComponent
   ]
 })
 export class MainModule { }
