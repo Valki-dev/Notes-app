@@ -15,4 +15,8 @@ export class NotesService {
     return this.notes;
   }
 
+  createNote(newNote: Note) {
+    this.notes.push(newNote);
+  }
+
 }

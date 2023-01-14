@@ -22,11 +22,13 @@ export class FormComponent {
         tittle: this.tittle,
         description: this.description
       }
-  
-      this.service.getNotes.push(newNote);
+
+      this.service.createNote(newNote);
       console.log(this.service.getNotes);
     }
-    
+
+    this.tittle = "";
+    this.description = "";
   }
 
 }
