@@ -4,6 +4,10 @@
     overflow-y: auto; */
 }
 
+input {
+    width: 280px;
+}
+
 #notesList {
     border-radius: 10px;
     margin-bottom: 100px;

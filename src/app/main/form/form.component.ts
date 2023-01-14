@@ -22,7 +22,8 @@ export class FormComponent {
       let newNote: Note = {
         id: id,
         tittle: this.tittle,
-        description: this.description
+        description: this.description,
+        completed: false
       }
 
       this.service.createNote(newNote);

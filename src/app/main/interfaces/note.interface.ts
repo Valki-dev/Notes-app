@@ -1,5 +1,6 @@
 export interface Note {
     id: number,
     tittle: string,
-    description: string
+    description: string,
+    completed: boolean
 }
