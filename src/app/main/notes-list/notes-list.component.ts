@@ -17,6 +17,8 @@ export class NotesListComponent {
   description: string = "";
   selectedNote!: Note;
   striked: boolean = false;
+  sortingMethod: string = "";
+  sortingCounter: number = 0;
 
   deleteNote(note: Note): void {
     this.service.deleteNote(note);
@@ -24,9 +26,7 @@ export class NotesListComponent {
 
   enableModal(note: Note) {
     this.selectedNote = note;
-    console.log(this.selectedNote);
     this.modalActivated = true;
-    ;
     this.tittle = this.selectedNote.tittle;
     this.description = this.selectedNote.description;
   }
@@ -48,12 +48,23 @@ export class NotesListComponent {
     if (!this.striked) {
       this.striked = true;
       note.completed = true;
-
     } else {
       this.striked = false;
       note.completed = false;
     }
   }
 
+  sortNotes(method: string) {
+    this.sortingMethod = method;
+    this.sortingCounter++;
+    // this.resetSortingMethod();
+  }
+
+  resetSortingMethod() {
+    if(this.sortingCounter > 1) {
+      this.sortingCounter = 0;
+      this.sortingMethod = "";
+    }
+  }
 
 }

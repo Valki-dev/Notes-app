@@ -8,16 +8,116 @@ input {
     width: 280px;
 }
 
-#notesList {
+.menu {
     border-radius: 10px;
-    margin-bottom: 100px;
-    margin-top: 70px;
-}
-
-.strike {
-    text-decoration: line-through;
 }
 
 .none {
     text-decoration: none;
+}
+
+#noteListContainer {
+    border-radius: 10px;
+}
+
+#notesList {
+    border-radius: 10px;
+    margin-bottom: 100px;
+    /* margin-top: 70px; */
+    margin-bottom: 100px;
+}
+
+.strike {
+    
+    text-decoration: line-through rgb(66, 66, 66) 2px;
+}
+
+.rojo {
+    border: 1px solid red;
+}
+
+/*Dropdown menu code*/
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    color: #222222
+}
+
+/* Dropdown */
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(29, 86, 96);
+}
+
+.dd-button {
+    display: inline-block;
+    border-radius: 7px;
+    padding: 10px 30px 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+
+}
+
+.dd-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-left: 65px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+}
+
+.dd-input {
+    display: none;
+}
+
+.dd-menu {
+    position: absolute;
+    top: 100%;
+    border: 1px solid white;
+    border-radius: 7px;
+    padding: 0;
+    margin: 5px 0 0 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+    background-color: rgb(29, 86, 96);
+    list-style-type: none;
+}
+
+.dd-input+.dd-menu {
+    display: none;
+}
+
+.dd-input:checked+.dd-menu {
+    display: block;
+}
+
+.dd-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dd-menu li:hover {
+    border-radius: 6px;
+    background-color: rgb(1, 49, 63);
+}
+
+.dd-menu li a {
+    display: block;
+    margin: -10px -20px;
+    padding: 10px 20px;
+}
+
+.dd-menu li.divider {
+    padding: 0;
+    border-bottom: 1px solid rgb(0, 11, 15);
 }

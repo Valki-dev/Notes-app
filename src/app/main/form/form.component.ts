@@ -27,7 +27,6 @@ export class FormComponent {
       }
 
       this.service.createNote(newNote);
-      console.log(this.service.getNotes);
     }
 
     // this.tittle = "";

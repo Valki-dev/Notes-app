@@ -38,5 +38,9 @@ export class NotesService {
   findIndex(note: Note) {
     return this.notes.findIndex( noteInArray => noteInArray.id === note.id);
   }
+  
+  sortNotes(sortignMethod: string) {
+    console.log(`Método: ${sortignMethod}`);
+  }
 
 }

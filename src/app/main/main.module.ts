@@ -5,6 +5,7 @@ import { NotesListComponent } from './notes-list/notes-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { MainPageComponent } from './main-page/main-page.component';
   declarations: [
     FormComponent,
     NotesListComponent,
-    MainPageComponent
+    MainPageComponent,
+    SortPipe
   ],
   imports: [
     CommonModule,
