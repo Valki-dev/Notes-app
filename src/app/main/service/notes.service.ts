@@ -7,7 +7,9 @@ import { Note } from '../interfaces/note.interface';
 })
 export class NotesService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
+    this.notes = JSON.parse(localStorage.getItem('storagedNotes')!) || [];
+  }
 
   notes: Note[] = [];
 
@@ -17,6 +19,7 @@ export class NotesService {
 
   createNote(newNote: Note): void {
     this.notes.push(newNote);
+    this.storageNotes();
   }
 
   deleteNote(note: Note): void {
@@ -24,6 +27,7 @@ export class NotesService {
     
     if(index != -1) {      
       this.notes.splice(index, 1);
+      this.storageNotes();
     }
   }
 
@@ -32,6 +36,7 @@ export class NotesService {
     if(index != -1) {
       this.notes[index].tittle = tittle;
       this.notes[index].description = description;
+      this.storageNotes();
     }
   }
 
@@ -41,6 +46,10 @@ export class NotesService {
   
   sortNotes(sortignMethod: string) {
     console.log(`Método: ${sortignMethod}`);
+  }
+
+  storageNotes() {
+    localStorage.setItem('storagedNotes', JSON.stringify(this.notes));
   }
 
 }

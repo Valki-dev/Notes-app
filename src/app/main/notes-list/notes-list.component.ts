@@ -48,9 +48,11 @@ export class NotesListComponent {
     if (!this.striked) {
       this.striked = true;
       note.completed = true;
+      this.service.storageNotes();
     } else {
       this.striked = false;
       note.completed = false;
+      this.service.storageNotes();
     }
   }
 

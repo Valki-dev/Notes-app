@@ -16,7 +16,7 @@
         </div>    
     </div>
 
-    <div class="grid grid-cols-4 grid-flow-row-dense" id="notesList">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-flow-row-dense" id="notesList">
 
         <div *ngFor="let note of notes | sortNotes: sortingMethod" class="p-5 me-5 mb-2 mt-2">
             <!--Cards-->
