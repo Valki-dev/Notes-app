@@ -7,7 +7,7 @@ import { Note } from '../interfaces/note.interface';
 })
 export class NotesService {
 
-  constructor(private httpClient: HttpClient) { 
+  constructor() { 
     this.notes = JSON.parse(localStorage.getItem('storagedNotes')!) || [];
   }
 

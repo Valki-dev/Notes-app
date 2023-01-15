@@ -14,6 +14,7 @@ export class FormComponent {
   tittle: string = "";
   description: string = "";
   ids: number[] = [];
+  error: boolean = false;
 
 
   createNote() {
@@ -27,10 +28,12 @@ export class FormComponent {
       }
 
       this.service.createNote(newNote);
+    } else {
+      this.error = true;
     }
 
-    // this.tittle = "";
-    // this.description = "";
+    this.tittle = "";
+    this.description = "";
   }
 
   generateId() {

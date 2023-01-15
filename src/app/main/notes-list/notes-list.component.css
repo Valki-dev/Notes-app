@@ -18,6 +18,7 @@ input {
 
 #noteListContainer {
     border-radius: 10px;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 #notesList {
@@ -28,12 +29,27 @@ input {
 }
 
 .strike {
-    
     text-decoration: line-through rgb(66, 66, 66) 2px;
 }
 
-.rojo {
-    border: 1px solid red;
+.updateButton {
+    width: 150px;
+}
+
+.updateNoteInput {
+    width: 350px;
+}
+
+@media (max-width: 500px) {
+    .updateNoteInput {
+        width: 250px;
+    }
+}
+
+@media (max-width: 463px) {
+    .updateNoteInput {
+        width: 230px;
+    }
 }
 
 /*Dropdown menu code*/
